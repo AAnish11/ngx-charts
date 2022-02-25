@@ -301,10 +301,11 @@ export class HeatMapComponent extends BaseChartComponent {
   }
 
   getLegendOptions(): LegendOptions {
+    console.log(this.scaleType, this.colors , this.colors.scale);
     return {
       scaleType: this.scaleType,
       domain: this.valueDomain,
-      colors: this.scaleType === ScaleType.Ordinal ? this.colors : this.colors.scale,
+      colors: this.colors,
       title: this.scaleType === ScaleType.Ordinal ? this.legendTitle : undefined,
       position: this.legendPosition
     };
